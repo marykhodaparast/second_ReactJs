@@ -12,14 +12,14 @@
 .list-items li {
     font-size: 2em;
     list-style: none;
-    color: black;
+    color: hsl(0,0%,25%);
     text-align: center;
     margin: 0;
 
 }
 
 .list-items li:hover {
-    color: yellow;
+    color: hsl(0,0%,45%);
     cursor: pointer;
 
 }
