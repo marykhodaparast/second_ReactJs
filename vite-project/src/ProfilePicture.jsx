@@ -2,8 +2,8 @@ function ProfilePicture() {
 
     const imageUrl = './src/assets/test.png';
 
-    const handleClick = () => console.log('Ouch!');
+    const handleClick = (e) => e.target.style.display = 'none';
 
-    return(<img onClick={handleClick} src={imageUrl}></img>)
+    return(<img onClick={(e) => handleClick(e)} src={imageUrl}></img>)
 }
 export default ProfilePicture;
