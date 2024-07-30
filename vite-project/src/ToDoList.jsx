@@ -12,13 +12,38 @@ function ToDoList() {
     setNewTask(event.target.value);
   }
 
-  function addTask() {}
+  function addTask() {
+    if (newTask.trim() !== "") {
+      setTasks((t) => [...t, newTask]);
+      setNewTask("");
+    }
+  }
 
-  function deleteTask(index) {}
+  function deleteTask(index) {
+    const updatedTasks = tasks.filter((_, i) => i !== index);
+    setTasks(updatedTasks);
+  }
 
-  function moveTaskUp(index) {}
+  function moveTaskUp(index) {
+    if(index > 0) {
+      const updatedTasks = [...tasks];
+      //for swapping two elements in an array
+      [updatedTasks[index], updatedTasks[index - 1]] = [updatedTasks[index - 1], updatedTasks[index]];
+      setTasks(updatedTasks);
+    }
 
-  function moveTaskDown() {}
+  }
+
+  function moveTaskDown(index) {
+    if ( index < tasks.length - 1 ) {
+      const updatedTasks = [...tasks];
+      //for swapping two elements in an array
+      [updatedTasks[index], updatedTasks[index + 1]] = [
+        updatedTasks[index + 1], updatedTasks[index],
+      ];
+      setTasks(updatedTasks);
+    }
+  }
 
   return (
     <div className="to-do-list">
